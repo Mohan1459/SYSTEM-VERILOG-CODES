@@ -20,7 +20,7 @@ class header;
  endfunction
  
  function display(string name);
- $display("[%s]  address=%d,data=%d",name,addr,data);
+  $display("[%s]  address=%0d,data=%0d",name,addr,data);
  endfunction
   
  endclass
