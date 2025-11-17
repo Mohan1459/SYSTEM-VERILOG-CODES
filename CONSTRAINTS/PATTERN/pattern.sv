@@ -1,21 +1,20 @@
 
 class packet;
-  
   rand bit [3:0]da[];
   rand bit [3:0] a[];
   
   constraint c1{da.size==10;}
   
-  constraint c2{foreach(da[i])
+  constraint c2{foreach(da[i])         // 0102030405
     if(i%2==0)
       da[i]==0;
      else
        da[i]==(i/2)+1;}
   
-  constraint c3{
+  constraint c3{ 
     a.size == 10;
     
-    foreach(a[i])
+    foreach(a[i])                 // even num in odd location and odd num in even location 
       
     if(i%2==0)
       a[i]%2 == 1;
