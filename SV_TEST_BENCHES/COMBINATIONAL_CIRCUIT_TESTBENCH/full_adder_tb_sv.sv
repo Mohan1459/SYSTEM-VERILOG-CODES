@@ -1,3 +1,17 @@
+//Design
+module fa(
+  input a,
+  input b,
+  input c,
+  output sum,
+  output carry
+);
+  assign sum = a^b^c;
+  assign carry= a&b|b&c|c&a;
+endmodule
+
+
+//Test bench 
 class transaction;
   rand bit a;
   rand bit b;
