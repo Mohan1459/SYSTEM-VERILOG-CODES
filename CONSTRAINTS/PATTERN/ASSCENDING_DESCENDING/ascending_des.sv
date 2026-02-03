@@ -11,16 +11,17 @@ class packet;
     b[i]inside{[1:50]};
                }
   constraint c5{foreach(a[i])
-    if(i<0)
+    if(i>0)
       a[i]>a[i-1];
                }
   constraint c6{foreach(b[i])
-    if(i<0)
+    if(i>0)
       b[i]<b[i-1];
                }
   function void display1();
     foreach(a[i])
       $display("ELEMENTS ASCENDING ORDER=%0d",a[i]);
+    $display("--------------------------------------------------");
   endfunction
   
   function void display2();
