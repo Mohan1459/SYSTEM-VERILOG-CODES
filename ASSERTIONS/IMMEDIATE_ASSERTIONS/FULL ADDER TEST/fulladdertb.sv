@@ -5,23 +5,15 @@ module tb;
   
   fa g1(a,b,cin,cout,sum);
   initial begin
-   /* repeat(8)begin
-    {a,b,cin}=3'b000; #5;
-    {a,b,cin}=3'b001; #5;
-    {a,b,cin}=3'b010; #5;
-    {a,b,cin}=3'b011; #5;
-    {a,b,cin}=3'b100; #5;
-    {a,b,cin}=3'b101; #5;
-    {a,b,cin}=3'b110; #5;
-    {a,b,cin}=3'b111; #5;*/
-    {a,b,cin}=$random%8;
+    repeat(8)begin
+      {a,b,cin}=$urandom%8;
     #5;
     assert(sum==a^b^cin)
-      $display("TEST SUCCESS");
+      $display("SUM TEST PASSED");
     else
-      $display("TEST FAILED");
+      $display("SUM TEST FAILED");
     #5;
-    assert(cout== a&b|b&cin|cin&a)
+      assert(cout==(( a&b|b&cin|cin&a)))
       $display("CARRY TEST PASSED");
     else
       $display("CARRY TEST FAILED");
@@ -34,6 +26,9 @@ module tb;
     $dumpvars;
   end
 endmodule
+
+    
+    
 module tb;
   reg a,b,cin;
   wire cout;
