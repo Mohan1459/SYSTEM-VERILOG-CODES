@@ -1,4 +1,18 @@
-module tb;
+//design
+module fa(
+  input a,
+  input b,
+  input cin,
+  output reg cout,
+  output reg sum
+);
+  always@(*)begin
+    sum=a^b^cin;
+    cout=a&b|b&cin|cin&a;
+  end
+endmodule
+//Verification
+  module tb;
   reg a,b,cin;
   wire cout;
   wire sum;
