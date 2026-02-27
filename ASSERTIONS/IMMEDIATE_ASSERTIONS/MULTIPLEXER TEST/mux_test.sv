@@ -14,3 +14,17 @@ module mux
             : (s[0]?i[1]:i[0])
     );
 endmodule
+module tb;
+  reg [7:0]i;
+  reg [2:0]s;
+  wire y;
+  
+  mux g1(i,s,y);
+  initial begin
+    assert(y==i[s])
+      $display("assertion passed");
+    else
+      $display("assertion passed");
+  end
+endmodule
+
