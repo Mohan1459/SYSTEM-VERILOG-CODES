@@ -45,6 +45,6 @@ module tb;
     assert(y==i<<s)
       $display("assertion passed");
     else
-      $display("assertion passed");
+      $display("assertion failed");
   end
 endmodule
